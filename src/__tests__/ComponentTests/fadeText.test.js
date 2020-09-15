@@ -1,7 +1,7 @@
 import React from 'react';
 import {fireEvent, render, getByTitle} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import FadeText from '../../components/FadeText'
+import FadeText from '../../components/practice/FadeText'
 
 
 

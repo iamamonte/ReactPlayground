@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, Badge} from 'react-bootstrap';
-import {InternViewModel} from '../ViewModel/InternViewModels'
+import {InternViewModel} from '../../ViewModel/InternViewModels'
 
 
 

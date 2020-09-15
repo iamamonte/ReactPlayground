@@ -3,9 +3,9 @@
  */
 
 import React from 'react';
-import ImgButton from '../ImgButton';
+import ImgButton from '../practice/ImgButton';
 import {Jumbotron} from "react-bootstrap";
-import Counter from '../Counter';
+import Counter from '../practice/Counter';
 
 
 function soniaPage() {

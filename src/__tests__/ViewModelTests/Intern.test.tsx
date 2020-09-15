@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
 import { Intern } from '../../model/Intern'
-import InternInfoDisplay from '../../components/InternInfoDisplay'
+import InternInfoDisplay from '../../components/practice/InternInfoDisplay'
 import '@testing-library/jest-dom/extend-expect'; //this helps with intellisense, but is already imported at a higher level
 
 describe("Intern ViewModel tests", () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import ImgButton from '../../components/ImgButton'
+import ImgButton from '../../components/practice/ImgButton'
 
 test('button works', async () => {
   const { getByText, findByAltText } = render(<ImgButton />)

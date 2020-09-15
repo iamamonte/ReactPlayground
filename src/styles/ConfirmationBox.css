@@ -1,0 +1,24 @@
+
+.confirm-box * {
+    text-align: center;
+    width:90%;
+    margin: 2% auto 0 auto;
+    opacity: 1;
+}
+
+.confirm-box p {
+    color: #5B5B5B;
+}
+
+
+.body-modal-icon {
+    color: #44A45F;
+}
+
+.button-modal{
+
+
+background: #402366;
+
+
+}

@@ -1,0 +1,79 @@
+.event {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.event .imageTitle {
+  position: relative;
+}
+
+.event .imageTitle img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.event .name {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  padding: 1%;
+  padding-left: 4%;
+  width: 100%;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.event hr {
+  border: 5px solid rgb(167, 166, 166);
+  margin: 0;
+}
+
+.event .info {
+  padding: 4% 7%;
+}
+
+.event .details {
+  text-align: right;
+  margin-bottom: 2%;
+}
+
+.event .details p, .event .more {
+  color: indigo;
+}
+
+.event .details .detail {
+  padding: 1% 0;
+  font-weight: 800;
+}
+
+.event .details p {
+  display: inline;
+}
+
+.event .details p.tag {
+  color: rgb(122, 43, 226);
+}
+
+.event .details p svg {
+  margin-right: 1%;
+  margin-left: 2%;
+}
+
+.event .more {
+  margin-left: 1%;
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.event .button {
+  background-color: indigo;
+  border: none;
+  border-radius: 0;
+  padding: 2%;
+  width: 100%;
+}

@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {fireEvent, render} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import LightModal from "../../components/lightModal";
+import LightModal from "../../components/practice/lightModal";
 
 describe("lightModal tests", () => {
   describe("Component", () => {

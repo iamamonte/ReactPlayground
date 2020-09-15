@@ -1,6 +1,6 @@
 import React from 'react'; 
 import {render, fireEvent, waitFor, screen} from '@testing-library/react'; 
-import JokeModal from '../../components/JokeModal';
+import JokeModal from '../../components/practice/JokeModal';
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Joke Modal is properly functioning', ()=> {

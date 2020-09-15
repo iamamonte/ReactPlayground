@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from "react-bootstrap";
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../actions';
+import { increment, decrement } from '../../actions';
 
 function Counter(props) {
   let _count =   useSelector(props => props.counter);

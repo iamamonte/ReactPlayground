@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PurpleButton from "../../components/PurpleButton";
-import InputField from "../../components/InputField";
+import PurpleButton from "../../components/practice/PurpleButton";
+import InputField from "../../components/practice/InputField";
 
 describe("Initial Component Tests", () => {
   it("renders without crashing", () => {

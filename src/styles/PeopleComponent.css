@@ -1,0 +1,24 @@
+.profile-picture {
+    float: left;
+    width: 47px;
+    height: 47px;
+    border-radius: 23.5px;
+    margin-right: 10px;
+    resize: 'contain';
+    flex: 1;
+}
+
+.profile-name {
+    padding-top: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 90%;
+}
+
+.profile-location {
+    font-size: 11px;
+    padding-bottom: 10px;
+}
+.profile {
+    padding-bottom: 2px;
+}

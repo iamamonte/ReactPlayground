@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {fireEvent, render} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import NavBar from "../../components/navBar";
+import NavBar from "../../components/practice/navBar";
 
 
 describe("NavBar test", () => {

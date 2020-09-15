@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {fireEvent, render} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import PopOverTrigger from "../../components/PopOverButton";
+import PopOverTrigger from "../../components/practice/PopOverButton";
 
 describe("PopOverTrigger test", () => {
     describe("Component", () => {

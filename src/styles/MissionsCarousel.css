@@ -1,0 +1,33 @@
+.carousel {
+  background-color: white;
+}
+
+.carousel .carousel-inner {
+  padding: 10%;
+  padding-bottom: 20%;
+}
+
+
+.carousel .img-container img {
+  width: 100%;
+  margin-top:10%;
+  
+}
+
+.carousel .caption {
+  margin-top:10%;
+}
+
+.carousel .carousel-indicators li {
+  background-color: white;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #1d2124;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.carousel .carousel-indicators .active {
+  background-color: #1d2124;
+}

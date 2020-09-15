@@ -1,0 +1,62 @@
+
+.main-nav span {
+    font-size:12px;
+    display:inherit;
+    font-weight: bold;
+}
+
+.main-nav svg 
+{
+    font-size:40px;
+}
+
+@media (max-width: 576px)
+{
+    .main-nav svg
+    {
+        font-size:20px;
+    }
+}
+
+
+
+.main-nav *, .side-nav *
+{
+    color:white;
+}
+.logout {
+    padding:2%
+}
+.profile-img {
+    border: 1px solid transparent;
+    border-color: white;
+    width: 50px;
+    height: 50px;
+}
+
+.turnup-nav {
+    background: #402366 0% 0% no-repeat padding-box;
+}
+
+.main-nav a  {
+    text-align: center;
+}
+
+.main-nav {
+    display:inline-flex;
+}
+
+.side-nav {
+    display:inline-block;
+}
+
+.main-nav a {
+    margin-right:5%;
+}
+.side-nav a {
+    margin-right:2%;
+}
+
+.main-nav .dropdown-item {
+    color:#402366;
+}

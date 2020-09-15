@@ -13,7 +13,7 @@ import logo from '../resources/turnUpLogo.png'
 
 const Navigation = () => {
   return (
-    <Navbar variant="dark" expand="lg" className="navbar navbar-expand-lg">
+    <Navbar style={{backgroundColor:"cornflowerblue"}} variant="dark" expand="lg" className="navbar navbar-expand-lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="center-navbar m-auto">
@@ -24,6 +24,8 @@ const Navigation = () => {
           <NavDropdown title="Interns" id="basic-nav-dropdown">
             <Link className="dropdown-item" to='/interns/reacttask2'>React Task 2</Link>
             <Link className="dropdown-item" to="/interns/soniaPage">Sonia's Page</Link>
+            <Link className="dropdown-item" to="/interns/adilPage">Adil's Page</Link>
+            <Link className="dropdown-item" to="/CreateAccount">Create Account</Link>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

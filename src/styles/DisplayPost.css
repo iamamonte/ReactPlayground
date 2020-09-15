@@ -1,0 +1,72 @@
+.post {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  padding: 2%;
+}
+
+.post svg {
+  font-size: 30px;
+}
+
+
+.action-row svg
+{
+  color: gray;
+}
+.post .dots {
+  float: right;
+  color: indigo;
+}
+
+.post .time p {
+  color: darkgray;
+  text-align: right;
+}
+
+.post .content p {
+  color: gray;
+}
+
+.post .media img {
+  width: 100%;
+}
+
+.post img, .post iframe {
+  margin: 1% 0;
+}
+
+.post .stats {
+  margin-top: 2%;
+}
+
+.post .stats span {
+  border-radius: 50%;
+  background-color: indigo;
+  padding: 5px;
+  margin-right: 1%;
+}
+
+.post .stats svg {
+  color: white;
+  font-size: 100%;
+}
+
+.post .stats p {
+  display: inline;
+  margin-right: 2%;
+}
+
+.action {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+
+.action:focus {
+  outline: 0;
+}
+
+.active {
+  color: indigo !important;
+}

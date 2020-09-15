@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {render} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import LanguageList from "../../components/LanguageList";
+import LanguageList from "../../components/practice/LanguageList";
 
 describe("LanguageList tests", () => {
   describe("Component", () => {
