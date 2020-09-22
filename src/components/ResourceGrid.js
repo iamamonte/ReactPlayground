@@ -26,7 +26,7 @@ const ResourceGrid = ({resources, type}) => {
                 <Row xs={1} sm={2} md={3} lg={4}>
                     {resources.map((resource, i) => (
                         <Col key={i} className="card">
-                            <div className="content">
+                            <div>
                                 <Image src={resource.image}/>
                                 <h1>{resource.name}</h1>
                                 <p>{resource.description}</p>

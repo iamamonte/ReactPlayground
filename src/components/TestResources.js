@@ -27,8 +27,8 @@ function TestResources() {
   ]
 
   return (
-      // <ResourceGrid resources={resources} type={"card"}/>
-      <ResourceGrid resources={resources} type={"list"}/>
+       <ResourceGrid resources={resources} type={"card"}/>
+      // <ResourceGrid resources={resources} type={"list"}/>
   );
 }
 

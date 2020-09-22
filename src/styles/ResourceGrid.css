@@ -21,7 +21,7 @@
   border: none;
 }
 
-.resource-grid .card .content {
+.resource-grid .card > div {
   border: 2px solid black;
   padding: 5%;
   height: 100%;
