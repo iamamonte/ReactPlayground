@@ -1,0 +1,47 @@
+.resource-grid {
+  margin: 0px;
+}
+
+.resource-grid .list-item {
+  border-top: 1px solid black;
+  padding: 1.5%;
+}
+
+.resource-grid .list-item:last-of-type {
+  border-bottom: 1px solid black;
+}
+
+.resource-grid .list-item h1 {
+  font-size: 1em;
+  margin: 0px;
+}
+
+.resource-grid .card {
+  padding: 1%;
+  border: none;
+}
+
+.resource-grid .card .content {
+  border: 2px solid black;
+  padding: 5%;
+  height: 100%;
+}
+
+.resource-grid .card img {
+  width: 100%;
+}
+
+.resource-grid .card h1 {
+  font-size: 1.5em;
+  margin-top: 3%;
+}
+
+.resource-grid .card button {
+  background-color: indigo;
+  border: none;
+  border-radius: 0;
+  padding: 4%;
+  width: 80%;
+  display: block;
+  margin: auto;
+}
