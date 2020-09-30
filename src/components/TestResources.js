@@ -12,7 +12,7 @@ function TestResources() {
     {
       image: "/img/BLM.png",
       name:"Excepteur",
-      description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt ollit anim id est laborum."
+      description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt ollit anim id est laborum. Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor."
     },
     {
       image: "/img/BLM.png",

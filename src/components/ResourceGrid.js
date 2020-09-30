@@ -46,12 +46,12 @@ const ResourceGrid = ({resources, type}) => {
     }
 
     /**
-     * Cuts off description after 100 characters
+     * Cuts off description after 120 characters
      * @param {string} desc - description of resource
      */
     function cutoffDesc (desc) {
-        if (desc.length > 100) {
-            return desc.substring(0, 100) + "...";
+        if (desc.length > 120) {
+            return desc.substring(0, 120) + "...";
         }
         else {
             return desc;

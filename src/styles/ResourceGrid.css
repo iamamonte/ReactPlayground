@@ -33,6 +33,7 @@
 
 .resource-grid .card p {
   height: 100%;
+  font-size: 20%;
 }
 
 .resource-grid .card button {
