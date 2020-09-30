@@ -6,6 +6,9 @@ import '../styles/ResourceGrid.css';
 
 const ResourceGrid = ({resources, type}) => {
 
+    /**
+     * Displays resources as a list of names
+     */
     function listType() {
         return(
             <Container>
@@ -20,6 +23,9 @@ const ResourceGrid = ({resources, type}) => {
         );
     }
 
+    /**
+     * Displays resources as cards with images, names, and descriptions
+     */
     function cardType() {
         return(
             <Container>
