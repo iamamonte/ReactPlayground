@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'react-bootstrap/Image';
-import {Button, Row, Col, Container} from "react-bootstrap";
+import {Button, Row, Col, Card, Container} from "react-bootstrap";
 import '../styles/ResourceGrid.css';
 
 
@@ -25,13 +25,13 @@ const ResourceGrid = ({resources, type}) => {
             <Container>
                 <Row xs={1} sm={2} md={3} lg={4}>
                     {resources.map((resource, i) => (
-                        <Col key={i} className="card">
-                            <div>
+                        <Col key={i}>
+                            <Card>
                                 <Image src={resource.image}/>
                                 <h1>{resource.name}</h1>
                                 <p>{resource.description}</p>
                                 <Button>SEE MORE</Button>
-                            </div>
+                            </Card>
                         </Col>
                     ))}
                 </Row>

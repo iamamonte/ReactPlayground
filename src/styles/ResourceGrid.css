@@ -17,11 +17,6 @@
 }
 
 .resource-grid .card {
-  padding: 1%;
-  border: none;
-}
-
-.resource-grid .card > div {
   border: 2px solid black;
   padding: 5%;
   height: 100%;
