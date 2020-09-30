@@ -31,6 +31,10 @@
   margin-top: 3%;
 }
 
+.resource-grid .card p {
+  height: 100%;
+}
+
 .resource-grid .card button {
   background-color: indigo;
   border: none;

@@ -29,7 +29,7 @@ const ResourceGrid = ({resources, type}) => {
                             <Card>
                                 <Image src={resource.image}/>
                                 <h1>{resource.name}</h1>
-                                <p>{resource.description}</p>
+                                <p>{cutoffDesc(resource.description)}</p>
                                 <Button>SEE MORE</Button>
                             </Card>
                         </Col>
@@ -37,6 +37,19 @@ const ResourceGrid = ({resources, type}) => {
                 </Row>
             </Container>
         );
+    }
+
+    /**
+     * Cuts off description after 100 characters
+     * @param {string} desc - description of resource
+     */
+    function cutoffDesc (desc) {
+        if (desc.length > 100) {
+            return desc.substring(0, 100) + "...";
+        }
+        else {
+            return desc;
+        }
     }
 
     return (
