@@ -60,7 +60,7 @@ const ResourceGrid = ({resources, type}) => {
 
     return (
         <div className="resource-grid">
-            {type === "list" ? listType() : cardType()}
+            {type === "card" ? cardType() : listType()}
         </div>
     );
 };

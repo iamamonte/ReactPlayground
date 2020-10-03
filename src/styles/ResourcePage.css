@@ -1,0 +1,12 @@
+.resource-page .active {
+  color: indigo;
+}
+
+.resource-page .icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.resource-page .icons svg {
+  font-size: 1.5em;
+}

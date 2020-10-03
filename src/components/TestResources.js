@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ResourceGrid from './ResourceGrid';
-
+import {BsFillGridFill} from "react-icons/bs";
+import {GoThreeBars} from 'react-icons/go';
+import Icon from './Icon';
+import { Container } from 'react-bootstrap';
+import '../styles/ResourcePage.css';
 
 function TestResources() {
+  const [displayType,setType] = useState("card");
+
   const resources = [
     {
       image: "/img/BLM.png",
@@ -26,9 +32,26 @@ function TestResources() {
     }
   ]
 
+  const cardIcon = {
+    onClick: () => {setType("card")},
+    color: "gray",
+    children: <BsFillGridFill className={displayType === "card" ? "active" : ""}/>
+  }
+
+  const listIcon = {
+    onClick: () => {setType("list")},
+    color: "gray",
+    children: <GoThreeBars className={displayType === "list" ? "active" : ""}/>
+  }
+
   return (
-       <ResourceGrid resources={resources} type={"card"}/>
-      // <ResourceGrid resources={resources} type={"list"}/>
+    <Container className="resource-page">
+      <div className="icons">
+        <Icon onClick={cardIcon.onClick} color={cardIcon.color} children={cardIcon.children} />
+        <Icon onClick={listIcon.onClick} color={listIcon.color} children={listIcon.children} />
+      </div>
+      <ResourceGrid resources={resources} type={displayType}/>
+    </Container>
   );
 }
 
