@@ -17,7 +17,7 @@ import soniaPage from "./components/interns/soniaPage";
 import AdilPage from "./components/interns/AdilPage";
 import CreateAccount from "./components/CreateAccount";
 import NavBarComponent from "./components/NavBarComponent"
-import TestResources from "./components/TestResources";
+import ResourcePage from "./components/ResourcePage";
 
 /** React-redux Components */
 import { Provider } from 'react-redux';
@@ -41,7 +41,7 @@ const App = () => {
             <Route path="/interns/soniaPage" component={soniaPage} />
             <Route path="/interns/AdilPage" component={AdilPage} />
             <Route path="/CreateAccount" component={CreateAccount} />
-            <Route path="/TestResources" component={TestResources} />
+            <Route path="/ResourcePage" component={ResourcePage} />
             <Route component={PageNotFound} />
           </Switch>
         </Container>
