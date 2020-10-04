@@ -1,5 +1,15 @@
-.resource-page .active {
-  color: indigo;
+.resource-page .search {
+  position: relative;
+}
+
+.resource-page .search svg {
+  position: absolute;
+  right: 2%;
+  height: 100%;
+}
+
+.resource-page .search input {
+  width: 100%;
 }
 
 .resource-page .icons {
@@ -9,4 +19,12 @@
 
 .resource-page .icons svg {
   font-size: 1.5em;
+}
+
+.resource-page .active {
+  color: indigo;
+}
+
+.resource-page .hidden {
+  display: none;
 }

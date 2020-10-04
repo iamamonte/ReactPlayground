@@ -1,13 +1,27 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ResourceGrid from './ResourceGrid';
 import {BsFillGridFill} from "react-icons/bs";
 import {GoThreeBars} from 'react-icons/go';
+import {FaSearch} from 'react-icons/fa'
 import Icon from './Icon';
 import { Container } from 'react-bootstrap';
 import '../styles/ResourcePage.css';
 
 function TestResources() {
   const [displayType,setType] = useState("card");
+  const [searchTerm,updateSearch] = useState("");
+
+  const cardIcon = {
+    onClick: () => {setType("card");},
+    color: "gray",
+    children: <BsFillGridFill className={displayType === "card" ? "active" : ""}/>
+  }
+
+  const listIcon = {
+    onClick: () => {setType("list");},
+    color: "gray",
+    children: <GoThreeBars className={displayType === "list" ? "active" : ""}/>
+  }
 
   const resources = [
     {
@@ -32,20 +46,36 @@ function TestResources() {
     }
   ]
 
-  const cardIcon = {
-    onClick: () => {setType("card")},
-    color: "gray",
-    children: <BsFillGridFill className={displayType === "card" ? "active" : ""}/>
-  }
+  /**
+   * After each render (state change),
+   * hides resources whose name does not contain the current searchTerm
+   */
+  useEffect(() => {
+    let resources = document.querySelectorAll(".resource-grid .col");
+    for (let i = 0; i < resources.length; i++) {
+      let name = displayType === "card" ? resources[i].firstElementChild.firstElementChild.nextElementSibling.textContent.toLowerCase() : resources[i].firstElementChild.textContent.toLowerCase();
+      if (name.includes(searchTerm.toLowerCase())) {
+        resources[i].classList.remove("hidden");
+      } else {
+        resources[i].classList.add("hidden");
+      }
+    }
+  });
 
-  const listIcon = {
-    onClick: () => {setType("list")},
-    color: "gray",
-    children: <GoThreeBars className={displayType === "list" ? "active" : ""}/>
+  /**
+   * Updates search term
+   * @param {object} e - triggering event
+   */
+  const searchChange = (e) => {
+    updateSearch(e.target.value);
   }
 
   return (
     <Container className="resource-page">
+      <div className="search">
+        <FaSearch/>
+        <input type="text" value={searchTerm} onChange={searchChange} placeholder="Search for resources"/>
+      </div>
       <div className="icons">
         <Icon onClick={cardIcon.onClick} color={cardIcon.color} children={cardIcon.children} />
         <Icon onClick={listIcon.onClick} color={listIcon.color} children={listIcon.children} />
