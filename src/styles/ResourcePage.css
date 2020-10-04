@@ -2,14 +2,25 @@
   position: relative;
 }
 
-.resource-page .search svg {
+.resource-page .search > svg:first-of-type {
   position: absolute;
-  right: 2%;
+  right: 7%;
   height: 100%;
 }
 
 .resource-page .search input {
-  width: 100%;
+  width: 95%;
+}
+
+.resource-page .search > div {
+  width: 5%;
+  display: inline-block;
+  text-align: center;
+}
+
+.resource-page .search button p {
+  font-size: 5%;
+  margin: 0;
 }
 
 .resource-page .icons {

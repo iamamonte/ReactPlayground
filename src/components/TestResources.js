@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ResourceGrid from './ResourceGrid';
 import {BsFillGridFill} from "react-icons/bs";
 import {GoThreeBars} from 'react-icons/go';
-import {FaSearch} from 'react-icons/fa'
+import {FaSearch, FaFilter} from 'react-icons/fa'
 import Icon from './Icon';
 import { Container } from 'react-bootstrap';
 import '../styles/ResourcePage.css';
@@ -10,6 +10,12 @@ import '../styles/ResourcePage.css';
 function TestResources() {
   const [displayType,setType] = useState("card");
   const [searchTerm,updateSearch] = useState("");
+
+  const filterIcon = {
+    onClick: () => {console.log("show filter options")},
+    color: "orangered",
+    children: <div><FaFilter/><p>Filter</p></div>
+  }
 
   const cardIcon = {
     onClick: () => {setType("card");},
@@ -75,6 +81,7 @@ function TestResources() {
       <div className="search">
         <FaSearch/>
         <input type="text" value={searchTerm} onChange={searchChange} placeholder="Search for resources"/>
+        <Icon onClick={filterIcon.onClick} color={filterIcon.color} children={filterIcon.children} />
       </div>
       <div className="icons">
         <Icon onClick={cardIcon.onClick} color={cardIcon.color} children={cardIcon.children} />
