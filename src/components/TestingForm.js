@@ -36,7 +36,7 @@ const SignupForm = () => {
                 First Name
           </Form.Label>
               <Field as={FormControl} name="firstName" placeholder="Jimmy" data-testid="firstName" />
-              {errors.firstName && touched.firstName && <Alert variant="danger">{errors.firstName}</Alert>}
+              {errors.firstName && touched.firstName && <Alert variant="danger" data-testid="firstNameError">{errors.firstName}</Alert>}
             </Form.Group>
           </Form.Row>
           <Form.Row>
@@ -45,7 +45,7 @@ const SignupForm = () => {
                 Last Name
               </Form.Label>
               <Field as={FormControl} name="lastName" data-testid="lastName" />
-              {errors.lastName && touched.lastName && <Alert variant="danger">{errors.lastName}</Alert>}
+              {errors.lastName && touched.lastName && <Alert variant="danger" data-testid="lastNameError">{errors.lastName}</Alert>}
             </Form.Group>
           </Form.Row>
           <Form.Row>
@@ -54,12 +54,12 @@ const SignupForm = () => {
                 Email
               </Form.Label>
               <Field as={FormControl} placeholder="bob@domain.com" name="email" type="email" data-testid="email" />
-              {errors.email && touched.email && <Alert variant="danger">{errors.email}</Alert>}
+              {errors.email && touched.email && <Alert variant="danger" data-testid="emailError">{errors.email}</Alert>}
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group>
-              <Button>Submit</Button>
+              <Button data-testid="submit">Submit</Button>
             </Form.Group>
           </Form.Row>
 

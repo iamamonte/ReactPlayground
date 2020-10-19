@@ -13,7 +13,7 @@ describe("Testing Form", () => {
     const firstNameInput = await waitForElement(() => findByTestId("firstName"));
     const lastNameInput = await waitForElement(() => findByTestId("lastName"));
     const emailInput = await waitForElement(() => findByTestId("email"));
-    const button = await waitForElement(() => findByTestId("Submit"));
+    const button = await waitForElement(() => findByTestId("submit"));
 
     await wait(() => {
       //change input firsName
