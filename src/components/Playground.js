@@ -230,7 +230,6 @@ const Playground = (props) => {
         <Row className='justify-content-center'>
                 <ConfirmModal header={"Post Successful!"} content="Lorem ipsum ...." />
         </Row>
-
         <Counter></Counter>
         <Container>
           <Row>
