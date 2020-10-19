@@ -33,6 +33,9 @@ const BootstrapFormikExample = ()=>{
             console.log(formik);
             console.log("From formik");
           alert(JSON.stringify(values, null, 2));
+          setFirstName(values.firstName);
+          setLastName(values.lastName);
+          setEmail(values.email);
         }
         // ,onChange:values => {console.log("formik onChange",values);}
        ,validationSchema:ExampleSchema

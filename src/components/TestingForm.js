@@ -1,15 +1,15 @@
 
-import React, { useState } from 'react';
+import React  from 'react';
 import { Formik, Form as FForm, Field } from 'formik';
 import * as Yup from 'yup';
 import { FormControl, Form, Button, Alert } from 'react-bootstrap';
 
 const SignupForm = () => {
-  const [_firstName, setFirstName] = useState('')
+  
   return (
     <Formik
       initialValues={{
-        firstName: _firstName,
+        firstName: '',
         lastName: '',
         email: '',
       }}
@@ -25,7 +25,9 @@ const SignupForm = () => {
           .required('Required'),
       })}
       onSubmit={values => {
+        console.log("Hmmm");
         alert(JSON.stringify(values, null, 2));
+        
       }}
     >
       {({ errors, touched, isValidating }) => (
@@ -40,6 +42,7 @@ const SignupForm = () => {
             </Form.Group>
           </Form.Row>
           <Form.Row>
+
             <Form.Group>
               <Form.Label>
                 Last Name
@@ -59,7 +62,7 @@ const SignupForm = () => {
           </Form.Row>
           <Form.Row>
             <Form.Group>
-              <Button data-testid="submit">Submit</Button>
+              <Button type="submit" data-testid="submit">Submit</Button>
             </Form.Group>
           </Form.Row>
 
