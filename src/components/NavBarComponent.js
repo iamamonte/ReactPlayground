@@ -21,7 +21,7 @@ const NavBarComponent = ({ img }) => {
                     <Link to="/TurnupHome"><AiFillHome /><span>Home</span></Link>
                     <Link to="/Events"><BiCalendarEvent /><span>Events</span></Link>
                     <Link to="/Connect"><FaUserFriends /><span>Connect</span></Link>
-                    <Link to="/Resources"><FaBook /><span>Resources</span></Link>
+                    <Link to="/ResourcePage"><FaBook /><span>Resources</span></Link>
                     <NavDropdown title="Interns" id="basic-nav-dropdown">
                     <Link className="dropdown-item" to='/playground'>Playground</Link>
                         <Link className="dropdown-item" to='/interns/reacttask2'>React Task 2</Link>

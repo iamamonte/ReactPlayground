@@ -7,7 +7,7 @@ import Icon from './Icon';
 import { Container } from 'react-bootstrap';
 import '../styles/ResourcePage.css';
 
-function TestResources() {
+function ResourcePage() {
 
   const tempResources = [
     {
@@ -83,4 +83,4 @@ function TestResources() {
   );
 }
 
-export default TestResources;
+export default ResourcePage;
