@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ResourceGrid from './ResourceGrid';
 import {BsFillGridFill} from "react-icons/bs";
 import {GoThreeBars} from 'react-icons/go';
@@ -8,84 +8,75 @@ import { Container } from 'react-bootstrap';
 import '../styles/ResourcePage.css';
 
 function TestResources() {
-  const [displayType,setType] = useState("card");
-  const [searchTerm,updateSearch] = useState("");
 
-  const filterIcon = {
-    onClick: () => {console.log("show filter options")},
-    color: "orangered",
-    children: <div><FaFilter/><p>Filter</p></div>
-  }
-
-  const cardIcon = {
-    onClick: () => {setType("card");},
-    color: "gray",
-    children: <BsFillGridFill className={displayType === "card" ? "active" : ""}/>
-  }
-
-  const listIcon = {
-    onClick: () => {setType("list");},
-    color: "gray",
-    children: <GoThreeBars className={displayType === "list" ? "active" : ""}/>
-  }
-
-  const resources = [
+  const tempResources = [
     {
       image: "/img/BLM.png",
       name:"Ut tempus",
       description: "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor.",
+      category:"Fair Elections and Gerrymandering"
     },
     {
       image: "/img/BLM.png",
       name:"Excepteur",
-      description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt ollit anim id est laborum. Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor."
+      description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt ollit anim id est laborum. Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor.",
+      category:"Student Loan/Debt"
     },
     {
       image: "/img/BLM.png",
       name:"Orci varius",
-      description: "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+      description: "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      category:"Women's Rights"
     },
     {
       image: "/img/BLM.png",
       name:"Praesent",
-      description: "Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi."
+      description: "Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi.",
+      category:"Campaign Finance"
     }
   ]
 
-  /**
-   * After each render (state change),
-   * hides resources whose name does not contain the current searchTerm
-   */
-  useEffect(() => {
-    let resources = document.querySelectorAll(".resource-grid .col");
-    for (let i = 0; i < resources.length; i++) {
-      let name = displayType === "card" ? resources[i].firstElementChild.firstElementChild.nextElementSibling.textContent.toLowerCase() : resources[i].firstElementChild.textContent.toLowerCase();
-      if (name.includes(searchTerm.toLowerCase())) {
-        resources[i].classList.remove("hidden");
-      } else {
-        resources[i].classList.add("hidden");
-      }
-    }
-  });
+  const [displayType,setType] = useState("card");
+  const [resources,setResources] = useState(tempResources);
 
+  function fetchResources(nameOrCategory)
+{
+  //placeholder for fetching resources. Resources would be fetched from database.
+  if(!nameOrCategory || nameOrCategory.length === 0) 
+  {
+    setResources(tempResources);
+  }
+  let _resources = tempResources.filter(x=>  x.category.toLowerCase().indexOf(nameOrCategory) >= 0 || x.name.toLowerCase().indexOf(nameOrCategory) >=0);
+  
+  setResources(_resources);
+
+  }
+
+  
   /**
    * Updates search term
    * @param {object} e - triggering event
    */
   const searchChange = (e) => {
-    updateSearch(e.target.value);
+    fetchResources(e.target.value);
   }
 
   return (
     <Container className="resource-page">
       <div className="search">
         <FaSearch/>
-        <input type="text" value={searchTerm} onChange={searchChange} placeholder="Search for resources"/>
-        <Icon onClick={filterIcon.onClick} color={filterIcon.color} children={filterIcon.children} />
+        <input type="text" onChange={searchChange} placeholder="Search for resources"/>
+        <Icon color="orangered" >
+        <div><FaFilter/><p>Filter</p></div>
+        </Icon>
       </div>
       <div className="icons">
-        <Icon onClick={cardIcon.onClick} color={cardIcon.color} children={cardIcon.children} />
-        <Icon onClick={listIcon.onClick} color={listIcon.color} children={listIcon.children} />
+        <Icon onClick={()=> setType("card")} color="gray">
+            <BsFillGridFill className={displayType === "card" ? "active" : ""}/>
+          </Icon>
+        <Icon onClick={() => setType("list")} color="gray">
+        <GoThreeBars className={displayType === "list" ? "active" : ""}/>
+        </Icon>
       </div>
       <ResourceGrid resources={resources} type={displayType}/>
     </Container>
