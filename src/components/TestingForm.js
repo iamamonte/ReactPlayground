@@ -1,13 +1,15 @@
 
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React, { useState } from 'react';
+import { Formik, Form as FForm, Field } from 'formik';
 import * as Yup from 'yup';
+import { FormControl, Form, Button, Alert } from 'react-bootstrap';
 
 const SignupForm = () => {
+  const [_firstName, setFirstName] = useState('')
   return (
     <Formik
       initialValues={{
-        firstName: '',
+        firstName: _firstName,
         lastName: '',
         email: '',
       }}
@@ -26,19 +28,43 @@ const SignupForm = () => {
         alert(JSON.stringify(values, null, 2));
       }}
     >
-      {() => (
-        <Form>
-          <label htmlFor="firstName">First Name</label>
-          <Field name="firstName" data-testid="firstName"/>
-          <div data-testid="firstNameError"><ErrorMessage name="firstName"/></div>
-          <label htmlFor="lastName">Last Name</label>
-          <Field name="lastName" data-testid="lastName"/>
-          <div data-testid="lastNameError"><ErrorMessage name="lastName"/></div>
-          <label htmlFor="email">Email</label>
-          <Field name="email" type="email" data-testid="email"/>
-          <div data-testid="emailError"><ErrorMessage name="email"/></div>
-          <button type="submit" data-testid="Submit">Submit</button>
-        </Form>
+      {({ errors, touched, isValidating }) => (
+        <FForm>
+          <Form.Row>
+            <Form.Group>
+              <Form.Label>
+                First Name
+          </Form.Label>
+              <Field as={FormControl} name="firstName" placeholder="Jimmy" data-testid="firstName" />
+              {errors.firstName && touched.firstName && <Alert variant="danger">{errors.firstName}</Alert>}
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group>
+              <Form.Label>
+                Last Name
+              </Form.Label>
+              <Field as={FormControl} name="lastName" data-testid="lastName" />
+              {errors.lastName && touched.lastName && <Alert variant="danger">{errors.lastName}</Alert>}
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group>
+              <Form.Label>
+                Email
+              </Form.Label>
+              <Field as={FormControl} placeholder="bob@domain.com" name="email" type="email" data-testid="email" />
+              {errors.email && touched.email && <Alert variant="danger">{errors.email}</Alert>}
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group>
+              <Button>Submit</Button>
+            </Form.Group>
+          </Form.Row>
+
+
+        </FForm>
       )}
     </Formik>
   );
