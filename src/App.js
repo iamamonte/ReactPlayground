@@ -24,6 +24,7 @@ import { Provider } from 'react-redux';
 
 //Store
 import configureStore from "./store";
+import BootstrapFormikExample from "./components/BootstrapFormikExample";
 
 const App = () => {
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/interns/AdilPage" component={AdilPage} />
             <Route path="/CreateAccount" component={CreateAccount} />
             <Route path="/TestingForm" component={SignUpForm}/>
+            <Route path="/ReactFormikTest" component={BootstrapFormikExample} />
             <Route component={PageNotFound} />
           </Switch>
         </Container>
