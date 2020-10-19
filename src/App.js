@@ -16,13 +16,16 @@ import ReactTask2 from "./components/interns/ReactTask2";
 import soniaPage from "./components/interns/soniaPage";
 import AdilPage from "./components/interns/AdilPage";
 import CreateAccount from "./components/CreateAccount";
+import SignUpForm from "./components/TestingForm";
 import NavBarComponent from "./components/NavBarComponent"
+import ResourcePage from "./components/ResourcePage";
 
 /** React-redux Components */
 import { Provider } from 'react-redux';
 
 //Store
 import configureStore from "./store";
+import BootstrapFormikExample from "./components/BootstrapFormikExample";
 
 const App = () => {
 
@@ -40,6 +43,10 @@ const App = () => {
             <Route path="/interns/soniaPage" component={soniaPage} />
             <Route path="/interns/AdilPage" component={AdilPage} />
             <Route path="/CreateAccount" component={CreateAccount} />
+            <Route path="/TestingForm" component={SignUpForm}/>
+            <Route path="/ReactFormikTest" component={BootstrapFormikExample} />
+            <Route path="/ResourcePage" component={ResourcePage} />
+
             <Route component={PageNotFound} />
           </Switch>
         </Container>

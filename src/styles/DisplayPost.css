@@ -28,12 +28,20 @@
   color: gray;
 }
 
-.post .media img {
+.post .media {
+  margin: -2% -2.5% 2%;
+}
+
+.post .media .media-col {
+  padding: 0 0.5% 0.5%;
+}
+
+.post .media .media-col img {
   width: 100%;
 }
 
-.post img, .post iframe {
-  margin: 1% 0;
+.post .media .media-col iframe {
+  width: 100%;
 }
 
 .post .stats {

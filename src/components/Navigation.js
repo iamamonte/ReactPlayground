@@ -26,6 +26,7 @@ const Navigation = () => {
             <Link className="dropdown-item" to="/interns/soniaPage">Sonia's Page</Link>
             <Link className="dropdown-item" to="/interns/adilPage">Adil's Page</Link>
             <Link className="dropdown-item" to="/CreateAccount">Create Account</Link>
+            <Link className="dropdown-item" to="/TestingForm">Testing Form</Link>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>

@@ -1,0 +1,41 @@
+.resource-page .search {
+  position: relative;
+}
+
+.resource-page .search > svg:first-of-type {
+  position: absolute;
+  right: 7%;
+  height: 100%;
+}
+
+.resource-page .search input {
+  width: 95%;
+}
+
+.resource-page .search > div {
+  width: 5%;
+  display: inline-block;
+  text-align: center;
+}
+
+.resource-page .search button p {
+  font-size: 5%;
+  margin: 0;
+}
+
+.resource-page .icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.resource-page .icons svg {
+  font-size: 1.5em;
+}
+
+.resource-page .active {
+  color: indigo;
+}
+
+.resource-page .hidden {
+  display: none;
+}
