@@ -1,0 +1,21 @@
+.home-pill-nav{
+    margin-top:2%;
+}
+.home-pill-nav .nav-link.active {
+    /* font-weight: bold;
+    color:gray; */
+
+    font: normal normal bold 32px/40px Azo Sans;
+letter-spacing: 0px;
+color: #402366;
+background-color: white;
+}
+
+.home-pill-nav a {
+    color:gray;
+    font: normal normal bold 32px/40px Azo Sans;
+letter-spacing: 0px;
+}
+
+
+
