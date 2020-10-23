@@ -23,6 +23,7 @@ import LanguageList from './practice/LanguageList';
 import JokeModal from "./practice/JokeModal";
 import Counter from './practice/Counter';
 import DisplayEvent from './DisplayEvent';
+import EventsPage from './EventsPage';
 
 /** Components Continued */
 
@@ -217,6 +218,7 @@ const Playground = (props) => {
     <Container>
   
       <Jumbotron>
+        <EventsPage event={event} profile={amonteProfile}/>
         <DisplayEvent event={event} profile={amonteProfile}/>
         <h1 className="header">TurnUp React Playground</h1>
         <ToastWrapper title="Welcome!">
