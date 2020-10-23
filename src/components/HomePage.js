@@ -6,8 +6,8 @@ import { Row, Container, Nav } from 'react-bootstrap'
 import  CreatePost  from './CreatePost'
 import  DisplayEvent  from './DisplayEvent'
 import  DisplayPost  from './DisplayPost'
-import * as __DummyData__ from '../__tests__/dummydata.json';
-import { Profiles } from '../__tests__/dummyData';
+import * as __DummyData__ from '../data/dummydata.json';
+import { Profiles } from '../data/dummyData.ts';
 
 const HomePage = (props) => {
 
