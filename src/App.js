@@ -19,6 +19,7 @@ import CreateAccount from "./components/CreateAccount";
 import SignUpForm from "./components/TestingForm";
 import NavBarComponent from "./components/NavBarComponent"
 import ResourcePage from "./components/ResourcePage";
+import HomePage from "./components/HomePage";
 
 /** React-redux Components */
 import { Provider } from 'react-redux';
@@ -37,7 +38,7 @@ const App = () => {
         <NavBarComponent img='https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg' />
         <Container className="my-4">
           <Switch>
-          <Route path='/' exact component={Playground} />
+          <Route path='/' exact component={HomePage} />
             <Route path='/playground' exact component={Playground} />
             <Route path='/interns/reacttask2' component={ReactTask2} />
             <Route path="/interns/soniaPage" component={soniaPage} />

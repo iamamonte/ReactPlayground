@@ -18,7 +18,7 @@ const NavBarComponent = ({ img }) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Form className="main-nav col-lg-9 col-sm-8 justify-content-center" inline>
-                    <Link to="/TurnupHome"><AiFillHome /><span>Home</span></Link>
+                    <Link to="/"><AiFillHome /><span>Home</span></Link>
                     <Link to="/Events"><BiCalendarEvent /><span>Events</span></Link>
                     <Link to="/Connect"><FaUserFriends /><span>Connect</span></Link>
                     <Link to="/ResourcePage"><FaBook /><span>Resources</span></Link>
@@ -28,10 +28,8 @@ const NavBarComponent = ({ img }) => {
                         <Link className="dropdown-item" to="/interns/soniaPage">Sonia's Page</Link>
                         <Link className="dropdown-item" to="/interns/adilPage">Adil's Page</Link>
                         <Link className="dropdown-item" to="/CreateAccount">Create Account</Link>
-
                         <Link className="dropdown-item" to="/TestingForm">Form Test</Link>
                         <Link className="dropdown-item" to="/ReactFormikTest">React Bootstrap Formik Example</Link>
-
                         <Link className="dropdown-item" to="/ResourcePage">Resource Page</Link>
 
                     </NavDropdown>

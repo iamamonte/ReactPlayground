@@ -18,7 +18,7 @@ const Navigation = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="center-navbar m-auto">
         <Image className="align-top" alt="TurnUp Activism" src={logo} width="150" height="50"/>
-          <Link className="nav-link" to='/'>Playground</Link>
+          <Link className="nav-link" to='/'>Home</Link>
           <Link className="nav-link" to='/events'>Events</Link>
           <Link className="nav-link" to='/conversations'>Conversations</Link>
           <NavDropdown title="Interns" id="basic-nav-dropdown">
@@ -27,6 +27,7 @@ const Navigation = () => {
             <Link className="dropdown-item" to="/interns/adilPage">Adil's Page</Link>
             <Link className="dropdown-item" to="/CreateAccount">Create Account</Link>
             <Link className="dropdown-item" to="/TestingForm">Testing Form</Link>
+            <Link className="dropdown-item" to="/Playground">Playground</Link>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
