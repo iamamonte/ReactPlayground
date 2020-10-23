@@ -1,0 +1,72 @@
+{
+    "events":[{
+        "name": "Dummy Event",
+        "img": "https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg",
+        "description": "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor. Nulla sit amet ullamcorper ipsum. Vivamus vestibulum massa tortor, at luctus leo auctor ac. Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tempor sapien at faucibus mattis. Quisque venenatis tellus sed diam facilisis tempor. Vivamus ut mi at quam ultricies posuere. Maecenas in ipsum id quam maximus faucibus.",
+        "tags": ["Activism", "#TimeForChange"],
+        "date": "Sunday, May 25, 2020",
+        "time": "8:00 AM - 12:00 PM",
+        "location": "Washington Square Park",
+        "eventId":-1
+      },
+      {
+        "name": "Dummy Event",
+        "img": "https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg",
+        "description": "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor. Nulla sit amet ullamcorper ipsum. Vivamus vestibulum massa tortor, at luctus leo auctor ac. Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tempor sapien at faucibus mattis. Quisque venenatis tellus sed diam facilisis tempor. Vivamus ut mi at quam ultricies posuere. Maecenas in ipsum id quam maximus faucibus.",
+        "tags": ["Activism", "#TimeForChange"],
+        "date": "Sunday, May 25, 2020",
+        "time": "8:00 AM - 12:00 PM",
+        "location": "Washington Square Park",
+        "eventId":-1
+      },
+      {
+        "name": "Dummy Event",
+        "img": "https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg",
+        "description": "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor. Nulla sit amet ullamcorper ipsum. Vivamus vestibulum massa tortor, at luctus leo auctor ac. Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tempor sapien at faucibus mattis. Quisque venenatis tellus sed diam facilisis tempor. Vivamus ut mi at quam ultricies posuere. Maecenas in ipsum id quam maximus faucibus.",
+        "tags": ["Activism", "#TimeForChange"],
+        "date": "Sunday, May 25, 2020",
+        "time": "8:00 AM - 12:00 PM",
+        "location": "Washington Square Park",
+        "eventId":-1
+      }
+    ],
+    "posts":[
+        {
+            "content": "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor. Nulla sit amet ullamcorper ipsum. Vivamus vestibulum massa tortor, at luctus leo auctor ac. Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tempor sapien at faucibus mattis. Quisque venenatis tellus sed diam facilisis tempor. Vivamus ut mi at quam ultricies posuere. Maecenas in ipsum id quam maximus faucibus.",
+            "time": "August 25, 2020 03:24:00",
+            "imgs": ["https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg","https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg", "https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg","https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg"],
+            "video": "https://www.youtube.com/embed/ttIWUvxnuEo",
+            "stats": {"likes": 162, "reposts": 38, "comments":52, "favorites": 123}
+        },
+        {
+            "content": "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor. Nulla sit amet ullamcorper ipsum. Vivamus vestibulum massa tortor, at luctus leo auctor ac. Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tempor sapien at faucibus mattis. Quisque venenatis tellus sed diam facilisis tempor. Vivamus ut mi at quam ultricies posuere. Maecenas in ipsum id quam maximus faucibus.",
+            "time": "August 25, 2020 03:24:00",
+            "imgs": ["https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg","https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg", "https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg","https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg"],
+            "stats": {"likes": 162, "reposts": 38, "comments":52, "favorites": 123}
+        },
+        {
+            "content": "Ut tempus facilisis lacinia. Maecenas pharetra vel orci vitae tempor. Nulla sit amet ullamcorper ipsum. Vivamus vestibulum massa tortor, at luctus leo auctor ac. Praesent finibus dolor et luctus tincidunt. Phasellus ut neque eu nisl interdum luctus eu et nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tempor sapien at faucibus mattis. Quisque venenatis tellus sed diam facilisis tempor. Vivamus ut mi at quam ultricies posuere. Maecenas in ipsum id quam maximus faucibus.",
+            "time": "August 25, 2020 03:24:00",
+            "imgs": [ "https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg","https://cdn.pixabay.com/photo/2017/08/03/11/05/people-2575608_960_720.jpg"],
+            
+            "stats": {"likes": 162, "reposts": 38, "comments":52, "favorites": 123}
+        }
+    ],
+    "carouselItems": [
+        {
+          "img": "/img/BLM.png",
+          "alt":"blm",
+          "caption": "TurnUp believes People’s Rights are Human Rights and Human Rights are People’s Rights"
+        },
+        {
+          "img": "/img/BLM.png",
+          "alt":"blm",
+          "caption": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt ollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        },
+        {
+          "img": "/img/BLM.png",
+          "alt":"blm",
+          "caption": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt ollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        }
+      ]
+}
