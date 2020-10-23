@@ -66,12 +66,12 @@ const HomeView = ({data, userProfile}) => {
         {
             if(record.isEvent)
             {
-                return (<Row>
+                return (<Row key={i}>
                     <DisplayEvent event={record.item} profile={userProfile} />
                 </Row>)
             }
             else{
-                return (<Row>
+                return (<Row key={i}>
                     <DisplayPost post={record.item} profile={userProfile} />
                 </Row>)
             }

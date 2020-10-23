@@ -9,11 +9,8 @@ import '../styles/DisplayEvent.css';
 const DisplayEvent = ({event, profile}) => {
 
   // format list of tags
-  const renderedTags = [];
-  for (const tag of event.tags) {
-    renderedTags.push(<p className="tag"><BsFillTagFill/>{tag}</p>);
-  }
-
+  const renderedTags = event.tags.map((tag, i) =>  <p className="tag" key={i}><BsFillTagFill/>{tag}</p>);
+  
   /**
    * Cuts off description after 500 characters and adds "More" link
    * @param {string} desc - description of event
