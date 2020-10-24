@@ -4,22 +4,28 @@ import PeopleComponent from "./PeopleComponent";
 import { HiLocationMarker } from 'react-icons/hi';
 import { BsClockFill } from 'react-icons/bs';
 import { BiCalendarAlt, BiSearch } from 'react-icons/bi';
+import { Profiles } from '../__tests__/dummyData';
+import Events from '../__tests__/dummydata.json';
+
 import '../styles/EventsPage.css';
 
 
-const EventsPage = ({ event, profile }) => {
+const EventsPage = ({ props }) => {
+    
     return (
-        <Container>
+        <Container fluid>
             <Row>
                 <Col xs={12} md={8}>
-                    <Card border="dark" style={{ width: '40rem' }} className="event">
+                {Events.events.map((event, i) => {
+                    return(
+                    <Card border="dark" className="event" key={i}>
                         <Card.Img variant="top" src={event.img} alt={event.name} width="200" height="300" />
                         <Card.Body>
                             <Row>
-                                <Col xs={6}>
-                                    <div className="profile"><PeopleComponent profile={profile} /><p>Posted an events</p></div>
+                                <Col xs={5}>
+                                    <div className="profile"><PeopleComponent profile={Profiles.amonte} /><p>Posted an events</p></div>
                                 </Col>
-                                <Col className="detail" xs={6}>
+                                <Col className="detail" xs={7}>
                                     <div><BiCalendarAlt size={15} /><span>{event.date}</span>
                                         <BsClockFill size={15} /><span>{event.time}</span>
                                         <HiLocationMarker size={15} /><span>{event.location}</span></div>
@@ -35,6 +41,8 @@ const EventsPage = ({ event, profile }) => {
                             <Button className="button" size="sm">RSVP</Button>
                         </Card.Body>
                     </Card>
+                    );
+                })}
                 </Col>
                 <Col xs={6} md={4}>
                     <div className="form">
