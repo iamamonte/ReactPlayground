@@ -96,7 +96,7 @@ let amonte = new Intern(
   export {Interns, Profiles};
 
 
-  describe("Placeholder for dummy data", () => {
-    it("Is a placeholder", () =>{});
+  // describe("Placeholder for dummy data", () => {
+  //   it("Is a placeholder", () =>{});
 
-  } );
+  // } );

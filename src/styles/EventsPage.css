@@ -1,57 +1,62 @@
 
 .profile{
-    white-space: nowrap ;
+  white-space: nowrap ;
 }
-.detail {
-    margin-bottom: 2%;
-    color: indigo;
-  }
-.detail span{
-    margin-right: 2%;
-    margin-left: 2%;
-    font: normal bold normal 9px/9px normal;
 
-color: #010101;
-  }
+.detail {
+  margin-bottom: 2%;
+  color: indigo;
+}
+
+.detail span{
+  margin-right: 1%;
+  margin-left: 1%;
+  font-style: normal;
+  font-size: 9px;
+  color: #010101;
+}
     
 .title{
-
-text-align: left;
-color: #402366;
+  text-align: left;
+  color: #402366;
 }
 
 .event .text{
-    font: normal normal normal 13px/13px normal;
-    color: #000000;
+  font-style: normal;
+  font-size: 12px;
+  color: #000000;
 }
 
 .event p{
-    text-align: left;
-    font: normal bold normal 10px/10px normal;
-
-color: #818080;
+  text-align: left;
+  font-style: normal;
+  font-size: 10px;
+  color: #818080;
 }
+
 .button {
-    background: indigo 0% 0% no-repeat padding-box;
-    margin-top: 10px;
-    color: white;
+  background: indigo 0% 0% no-repeat padding-box;
+  margin-top: 10px;
+  color: white;
   }
 
 .form Label{
-    margin-top: 10px;
-    font: normal normal normal 10px/10px normal;
-    text-align: left;
-    color: #6E6E6E;
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 10px;
+  text-align: left;
+  color: #6E6E6E;
 }
 
 .form p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font: normal normal bold 22px/33px normal;
-    text-align: left;
-    color: #402366;
-  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-size: 25px;
+  text-align: left;
+  color: #402366;
+}
 
-  .radio{
-    margin-top: 20px;
-  }
+.radio{
+  margin-top: 20px;
+}

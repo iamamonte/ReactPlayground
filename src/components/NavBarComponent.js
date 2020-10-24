@@ -18,8 +18,8 @@ const NavBarComponent = ({ img }) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Form className="main-nav col-lg-9 col-sm-8 justify-content-center" inline>
-                    <Link to="/TurnupHome"><AiFillHome /><span>Home</span></Link>
-                    <Link to="/Events"><BiCalendarEvent /><span>Events</span></Link>
+                    <Link to="/HomePage"><AiFillHome /><span>Home</span></Link>
+                    <Link to="/EventsPage"><BiCalendarEvent /><span>Events</span></Link>
                     <Link to="/Connect"><FaUserFriends /><span>Connect</span></Link>
                     <Link to="/ResourcePage"><FaBook /><span>Resources</span></Link>
                     <NavDropdown title="Interns" id="basic-nav-dropdown">
