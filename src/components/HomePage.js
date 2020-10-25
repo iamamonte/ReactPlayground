@@ -1,17 +1,16 @@
 import '../styles/HomePage.css'
 import * as QueryString from 'query-string'
-import React from 'react';
-// import  useState  from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import { Row, Container, Nav } from 'react-bootstrap'
 import  CreatePost  from './CreatePost'
 import  DisplayEvent  from './DisplayEvent'
 import  DisplayPost  from './DisplayPost'
-import * as __DummyData__ from '../data/dummydata.json';
 import { Profiles } from '../data/dummyData.ts';
+import * as EVENT from '../servicelayer/servicelayer-events'
 
 const HomePage = (props) => {
 
-    
     //check query string
     let query = QueryString.parse(props.location.search);
     let userProfile = props.userProfile ?? null;
@@ -46,14 +45,23 @@ const HomePage = (props) => {
             break;
     }
 
-    data.events = fetchEvents ?  __DummyData__.events : [];
-    data.posts = fetchPosts ? __DummyData__.posts : [];
+    
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch({type:EVENT.REQUEST_MYRECENT, payload:{userProfile} })
+    }, [dispatch,userProfile]);
 
+    const events = useSelector(state => state.events ?? []);
+    const posts = useSelector(state => state.posts ?? []);
+    const fetchError = useSelector(state => state.errorMessage ?? "");
+
+    data.events = fetchEvents ? events: [];
+    data.posts = fetchPosts ? posts: [];
 
 /** Home View
  * Can handle rendering events or posts
  */
-const HomeView = ({data, userProfile}) => {
+const HomeView = ({data, userProfile, error}) => {
     
     data.events = data.events || [];
     data.posts = data.posts || [];
@@ -61,8 +69,14 @@ const HomeView = ({data, userProfile}) => {
     //TODO: ordering by date
     let mappedData = items.map((item, i)=>{return {item:item, isEvent:item.eventId !== undefined}});
 
+    if(error)
+    {
+        return (<Container>{error}</Container>)
+    }
+
     return (<Container>
-        {mappedData.map((record, i)=>
+        { 
+        mappedData.map((record, i)=>
         {
             if(record.isEvent)
             {
@@ -99,7 +113,7 @@ const HomeView = ({data, userProfile}) => {
             </Nav>
         </Row>
         <Row>
-            <HomeView data={data} userProfile={userProfile}></HomeView>
+            <HomeView data={data} userProfile={userProfile} error={fetchError}></HomeView>
         </Row>
     </Container>)
 }

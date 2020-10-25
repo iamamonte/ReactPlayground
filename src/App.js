@@ -25,7 +25,7 @@ import HomePage from "./components/HomePage";
 import { Provider } from 'react-redux';
 
 //Store
-import configureStore from "./store";
+import configureStore from "./servicelayer/servicelayer-store";
 import BootstrapFormikExample from "./components/BootstrapFormikExample";
 
 const App = () => {
