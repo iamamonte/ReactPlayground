@@ -50,9 +50,18 @@
   padding: 2%;
 }
 
+.event-details p.tag svg {
+  font-size: initial;
+  margin-right: 2%;
+}
+
 .event-details .details .detail .add-to-calender {
   font-weight: bold;
   color: #402366;
+}
+
+.event-details .buttons {
+  margin-top: 15%;
 }
 
 .event-details button {
@@ -63,5 +72,4 @@
   margin: 1%;
   width: 80%;
   font-size: 0.7em;
-  margin-top: 20%;
 }

@@ -66,7 +66,7 @@ const EventDetails = () => {
               </Row>
             </Col>
             <Col>
-              <Row xs={1} sm={2}>
+              <Row xs={1} sm={2} className="buttons">
                 <Col><Button>Invite followers</Button></Col>
                 <Col><Button>RSVP for Event</Button></Col>
               </Row>
