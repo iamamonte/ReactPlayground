@@ -1,0 +1,67 @@
+.event-details .image img, .event-details .map img {
+  width: 100%;
+  height: 50vh;
+}
+
+.event-details .name-section, .event-details .details {
+  margin-top: 5%;
+}
+
+.event-details .details  {
+  line-height: 0.5em;
+}
+
+.event-details .name-section h1 {
+  display: inline;
+}
+
+.event-details .name-section span, .event-details .profile-section span, .event-details .details p.time {
+  color: gray;
+}
+
+.event-details .name-section span, .event-details .profile-section span {
+  margin-left: 2%;
+  font-size: 0.7em;
+}
+
+.event-details .name-section span, .event-details .profile-section .profile {
+  padding-left: 0;
+}
+
+.event-details .about-header p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.event-details .details p {
+  font-size: 0.7em;
+}
+
+.event-details .details p.title {
+  font-weight: bold;
+}
+
+.event-details .details .icon {
+  padding: 0;
+  text-align: center;
+}
+
+.event-details .details .detail {
+  padding: 2%;
+}
+
+.event-details .details .detail .add-to-calender {
+  font-weight: bold;
+  color: #402366;
+}
+
+.event-details button {
+  background-color: #402366;
+  border: none;
+  border-radius: 0;
+  padding: 4%;
+  margin: 1%;
+  width: 80%;
+  font-size: 0.7em;
+  margin-top: 20%;
+}
