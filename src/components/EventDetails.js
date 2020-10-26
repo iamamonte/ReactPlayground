@@ -53,6 +53,7 @@ const EventDetails = () => {
           <Row xs={1}>
             <Col className="map">
             <iframe
+              title="map"
               frameBorder="0"
               src={map_query} allowFullScreen>
             </iframe>
