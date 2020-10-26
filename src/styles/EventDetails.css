@@ -1,6 +1,11 @@
-.event-details .image img, .event-details .map img {
+.event-details .image img, .event-details .map {
   width: 100%;
   height: 50vh;
+}
+
+.event-details .map iframe {
+  height: 100%;
+  width: 100%;
 }
 
 .event-details .name-section, .event-details .details {

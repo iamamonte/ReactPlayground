@@ -11,10 +11,25 @@ const EventDetails = () => {
 
   // dummy data for testing
   const event = events[0];
-  const map = "https://cdn.filestackcontent.com/qfzkumr0RE27pdC8tqeH";
+
+  // format map query
+  const map_api = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBxl-yiU6cLGeEfhldU3HKEQbx5ngWfEbM";
+  const formatted_location = formatLocation(event.location);
+  const map_query = map_api + "&q=" + formatted_location;
 
   // format list of tags
   const renderedTags = event.tags.map((tag, i) =>  <p className="tag" key={i}><BsFillTagFill/>{tag}</p>);
+
+  /**
+   * Formats location for the Maps API
+   * @param {String} location
+   */
+  function formatLocation(location) {
+    location = location.split(",").map(x => x.trim().split(" "));
+    location = location.map(arr => arr.join("+")).join(",");
+    return location;
+  }
+
 
   return (
     <Container className="event-details">
@@ -36,7 +51,12 @@ const EventDetails = () => {
         </Col>
         <Col>
           <Row xs={1}>
-            <Col className="map"><img src={map} alt="map placeholder"/></Col>
+            <Col className="map">
+            <iframe
+              frameBorder="0"
+              src={map_query} allowFullScreen>
+            </iframe>
+            </Col>
             <Col className="details">
               <Row xs={1} sm={2}>
                 <Col>
