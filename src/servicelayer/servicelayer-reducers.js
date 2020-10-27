@@ -1,10 +1,10 @@
-import * as EVENT from './servicelayer-events'
+import * as ACTION from './servicelayer-actions'
 
 export const serviceLayerReducer = (state,action)=>
 {
     switch(action.type)
     {
-        case EVENT.RESPONSE_MYRECENT:
+        case ACTION.RESPONSE_MYRECENT:
             if(!action.isError)
             {   
                 let response = action.data.response;
@@ -12,7 +12,7 @@ export const serviceLayerReducer = (state,action)=>
             }
             else
             {
-                let errorMessage =`Failed to fetch ${EVENT.RESPONSE_MYRECENT}. Error:${action.data.error}`; 
+                let errorMessage =`Failed to fetch ${ACTION.RESPONSE_MYRECENT}. Error:${action.data.error}`; 
                 return {...state, errorMessage:errorMessage, payload:action.data.payload}
             }
         default:

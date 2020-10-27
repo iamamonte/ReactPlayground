@@ -3,11 +3,11 @@
  * @author - Amonte
  */
 import {all, takeLatest} from 'redux-saga/effects'
-import * as EVENT from './servicelayer-events'
+import * as ACTION from './servicelayer-actions'
 import {fetchMyRecent} from './eventPostService'
 
 
 export function* ServiceLayerSaga(){
-    yield all([takeLatest(EVENT.REQUEST_MYRECENT, fetchMyRecent)])
+    yield all([takeLatest(ACTION.REQUEST_MYRECENT, fetchMyRecent)])
 }
 

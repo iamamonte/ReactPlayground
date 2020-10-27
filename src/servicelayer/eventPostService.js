@@ -3,7 +3,7 @@
  * @author - Amonte
  */
 import * as DAL from './servicelayer-dal'
-import * as EVENT from './servicelayer-events'
+import * as ACTION from './servicelayer-actions'
 import {call, put} from 'redux-saga/effects'
 import {Normalize} from './normalizer'
 
@@ -18,14 +18,14 @@ export function* fetchMyRecent(payload)
             response.events = Normalize.events(eventsResult);
             response.posts = postsResult;
             yield put({
-                type: EVENT.RESPONSE_MYRECENT,
+                type: ACTION.RESPONSE_MYRECENT,
                 data: { response: response, payload: payload }
             });
         }
     }
     catch(e){
         yield put({
-            type:EVENT.RESPONSE_MYRECENT,
+            type:ACTION.RESPONSE_MYRECENT,
             data:{error:e, payload:payload},
             isError:true
         });

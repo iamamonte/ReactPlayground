@@ -1,5 +1,5 @@
 /**
- * Collection of redux 'types' aka events to be used in the redux-saga dispatch/reduce flow.
+ * Collection of redux 'actions' to be used in the redux-saga dispatch/reduce flow.
  * @author - Amonte
  */
 

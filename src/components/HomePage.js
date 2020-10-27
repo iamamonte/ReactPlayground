@@ -7,7 +7,7 @@ import  CreatePost  from './CreatePost'
 import  DisplayEvent  from './DisplayEvent'
 import  DisplayPost  from './DisplayPost'
 import { Profiles } from '../data/dummyData.ts';
-import * as EVENT from '../servicelayer/servicelayer-events'
+import * as ACTION from '../servicelayer/servicelayer-actions'
 
 const HomePage = (props) => {
 
@@ -48,7 +48,7 @@ const HomePage = (props) => {
     
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch({type:EVENT.REQUEST_MYRECENT, payload:{userProfile} })
+        dispatch({type:ACTION.REQUEST_MYRECENT, payload:{userProfile} })
     }, [dispatch,userProfile]);
 
     const events = useSelector(state => state.events ?? []);

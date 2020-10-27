@@ -4,8 +4,8 @@
  */
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { ServiceLayerSaga } from './servicelayer-in';
-import { serviceLayerReducer } from './servicelayer-out';
+import { ServiceLayerSaga } from './servicelayer-sagas';
+import { serviceLayerReducer } from './servicelayer-reducers';
 
 const configureStore = () => {
     const sagaMiddleware = createSagaMiddleware();
