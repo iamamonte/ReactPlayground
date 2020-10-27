@@ -1,8 +1,4 @@
 
-.profile{
-  white-space: nowrap ;
-}
-
 .detail {
   margin-bottom: 2%;
   color: indigo;
@@ -27,7 +23,7 @@
   color: #000000;
 }
 
-.event p{
+.event small{
   text-align: left;
   font-style: normal;
   font-size: 10px;
