@@ -4,8 +4,8 @@ import PeopleComponent from "./PeopleComponent";
 import { HiLocationMarker } from 'react-icons/hi';
 import { BsClockFill } from 'react-icons/bs';
 import { BiCalendarAlt, BiSearch } from 'react-icons/bi';
-import { Profiles } from '../__tests__/dummyData';
-import Events from '../__tests__/dummydata.json';
+import { Profiles } from '../data/dummyData';
+import Events from '../data/dummydata.json';
 
 import '../styles/EventsPage.css';
 
