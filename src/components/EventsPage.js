@@ -1,66 +1,57 @@
-import React from 'react';
-import { Row, Col, Button, Card, Container, InputGroup, FormControl, Form } from 'react-bootstrap';
-import PeopleComponent from "./PeopleComponent";
-import { HiLocationMarker } from 'react-icons/hi';
-import { BsClockFill } from 'react-icons/bs';
-import { BiCalendarAlt, BiSearch } from 'react-icons/bi';
+import React, { useState } from 'react';
+import { Row, Col, Button, Container, InputGroup, FormControl, Form } from 'react-bootstrap';
+import DisplayEvent from "./DisplayEvent";
+import { BiSearch } from 'react-icons/bi';
 import { Profiles } from '../data/dummyData';
-import Events from '../data/dummydata.json';
+import Data from '../data/dummydata.json';
 
 import '../styles/EventsPage.css';
 
 const EventsPage = () => {
+    const [type, setType] = useState('');
+    const [state, setState] = useState('');
+    const [city, setCity] = useState('');
+    const [tags, setTags] = useState('');
+    const [sortby, setSortBy] = useState('');
+    const [category, setCategory] = useState('');
+
+    const handleSubmit = event => {
+        event.preventDefault();
+    };
+    
     return (
         <Container fluid>
             <Row>
-                <Col xs={12} md={8}>
-                    {Events.events.map((event, i) => {
+                <Col xs={12} md={8} className="event">
+                    <Row>
+                        <Button className="button">CREATE EVENT</Button>
+                    </Row>
+                    {Data.events.map((Event, i) => {
                         return (
-                            <Card border="dark" className="event" key={i}>
-                                <Card.Img variant="top" src={event.img} alt={event.name} width="200" height="300" />
-                                <Card.Body>
-                                    <Row>
-                                        <Col xs={5}>
-                                            <div className="profile"><PeopleComponent profile={Profiles.amonte} /><small>Posted an events</small></div>
-                                        </Col>
-                                        <Col className="detail" xs={7}>
-                                            <div><BiCalendarAlt size={15} /><span>{event.date}</span>
-                                                <BsClockFill size={15} /><span>{event.time}</span>
-                                                <HiLocationMarker size={15} /><span>{event.location}</span></div>
-                                        </Col>
-                                    </Row>
-                                    <Card.Title className="title">
-                                        {event.name}
-                                    </Card.Title>
-                                    <Card.Text className="text">
-                                        {event.description}
-                                    </Card.Text>
-                                    <small>89 People Going</small>
-                                    <Button className="button" size="sm">RSVP</Button>
-                                </Card.Body>
-                            </Card>
+                            <Row key={i}>
+                                <DisplayEvent event={Event} profile={Profiles.amonte} />
+                            </Row>
                         );
                     })}
                 </Col>
                 <Col xs={6} md={4}>
                     <Form className="form">
-                        <InputGroup>
-                            <FormControl placeholder="Search for events"/>
-                            <InputGroup.Append>
-                                <Button variant="outline-secondary"><BiSearch /></Button>
-                            </InputGroup.Append>
-                        </InputGroup>
-
                         <Form.Group as={Col}>
+                            <InputGroup>
+                                <FormControl placeholder="Search for events" />
+                                <InputGroup.Append>
+                                    <Button type="submit" variant="outline-secondary"><BiSearch /></Button>
+                                </InputGroup.Append>
+                            </InputGroup>
                             <p>Filter:</p>
                             <Form.Label>Event Type</Form.Label>
-                            <Form.Control as="select" size="sm">
+                            <Form.Control as="select" size="sm" value={type} onChange={e => setType(e.target.value)}>
                                 <option>Both</option>
                                 <option>Virtual</option>
                                 <option>In Person</option>
                             </Form.Control>
                             <Form.Label>State</Form.Label>
-                            <Form.Control as="select" size="sm">
+                            <Form.Control as="select" size="sm" value={state} onChange={e => setState(e.target.value)} >
                                 <option>All</option>
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
@@ -115,7 +106,7 @@ const EventsPage = () => {
                                 <option value="WY">WY</option>
                             </Form.Control>
                             <Form.Label>City/Town (Please select the location on list below)</Form.Label>
-                            <Form.Control custom size="sm" as="select">
+                            <Form.Control custom size="sm" as="select" value={city} onChange={e => setCity(e.target.value)}>
                                 <option value="0">Choose...</option>
                             </Form.Control>
                             <div className="text-center radio">
@@ -124,29 +115,29 @@ const EventsPage = () => {
                                 <Form.Check inline label="Date Range" type="radio" name="formHorizontalRadios" />
                             </div>
                             <Form.Label>Tags</Form.Label>
-                            <Form.Control as="select" size="sm">
+                            <Form.Control as="select" size="sm" value={tags} onChange={e => setTags(e.target.value)}>
                                 <option>All</option>
                             </Form.Control>
                             <p>Sort:</p>
                             <Form.Label>Sort by</Form.Label>
-                            <Form.Control as="select" size="sm">
+                            <Form.Control as="select" size="sm" value={sortby} onChange={e => setSortBy(e.target.value)}>
                                 <option>Soonest</option>
                                 <option>Closest</option>
                                 <option>Popularity</option>
                             </Form.Control>
                             <Form.Label>Category</Form.Label>
-                            <Form.Control size="sm" as="select">
+                            <Form.Control size="sm" as="select" value={category} onChange={e => setCategory(e.target.value)}>
                                 <option>Both</option>
                                 <option>Political Campaign</option>
                                 <option>Activism</option>
                             </Form.Control>
-                            <div className="text-center">
+                        </Form.Group>
+                        <div className="text-center" onSubmit={handleSubmit}>
                                 <Button className="button" type="submit" value="Submit">Apply Filters</Button>
                             </div>
                             <div className="text-center">
                                 <Button variant="link" type="reset" value="Reset">Clear Filters</Button>
                             </div>
-                        </Form.Group>
                     </Form>
                 </Col>
             </Row>
