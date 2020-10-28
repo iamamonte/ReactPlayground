@@ -8,7 +8,7 @@ export const serviceLayerReducer = (state,action)=>
             if(!action.isError)
             {   
                 let response = action.data.response;
-                return {...state, events:response.events, posts:response.posts}
+                return {...state, eventsResponse:response.eventsResponse, postsResponse:response.postsResponse}
             }
             else
             {

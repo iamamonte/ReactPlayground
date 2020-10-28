@@ -48,15 +48,15 @@ const HomePage = (props) => {
     
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch({type:ACTION.REQUEST_MYRECENT, payload:{userProfile} })
+        dispatch({type:ACTION.REQUEST_MYRECENT, payload:{ state:"FL", city:"Sarasota", eventDate:new Date("9/1/20 16:00"), user:userProfile} })
     }, [dispatch,userProfile]);
 
-    const events = useSelector(state => state.events ?? []);
-    const posts = useSelector(state => state.posts ?? []);
+    const eventsResponse = useSelector(state => state.eventsResponse ?? {events:[], first:null,last:null});
+    const postsResponse = useSelector(state => state.postsResponse ?? {posts:[],first:null,last:null});
     const fetchError = useSelector(state => state.errorMessage ?? "");
 
-    data.events = fetchEvents ? events: [];
-    data.posts = fetchPosts ? posts: [];
+    data.events = fetchEvents ? eventsResponse.events : [];
+    data.posts = fetchPosts ? postsResponse.posts: [];
 
 /** Home View
  * Can handle rendering events or posts
