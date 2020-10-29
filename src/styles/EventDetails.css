@@ -8,8 +8,9 @@
   width: 100%;
 }
 
-.event-details .name-section, .event-details .details {
+.event-details .main-details, .event-details .extra-details {
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .event-details .details  {

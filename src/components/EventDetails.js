@@ -33,10 +33,19 @@ const EventDetails = () => {
 
   return (
     <Container className="event-details">
-      <Row xs={1} md={2}>
-        <Col>
+      <Row xs={1} lg={2}>
+        <Col className="image"><img src={event.img} alt={event.name}/></Col>
+        <Col className="map d-none d-lg-block">
+          <iframe
+            title="map"
+            frameBorder="0"
+            src={map_query} allowFullScreen>
+          </iframe>
+        </Col>
+      </Row>
+      <Row xs={1} lg={2}>
+        <Col className="main-details">
           <Row xs={1}>
-            <Col className="image"><img src={event.img} alt={event.name}/></Col>
             <Col className="name-section">
               <h1>{event.name}</h1>
               <span>0 people going</span>
@@ -49,15 +58,8 @@ const EventDetails = () => {
             <Col><p>{event.description}</p></Col>
           </Row>
         </Col>
-        <Col>
+        <Col className="extra-details">
           <Row xs={1}>
-            <Col className="map">
-            <iframe
-              title="map"
-              frameBorder="0"
-              src={map_query} allowFullScreen>
-            </iframe>
-            </Col>
             <Col className="details">
               <Row xs={1} sm={2}>
                 <Col>
@@ -93,6 +95,13 @@ const EventDetails = () => {
               </Row>
             </Col>
           </Row>
+        </Col>
+        <Col className="map d-block d-lg-none">
+          <iframe
+            title="map"
+            frameBorder="0"
+            src={map_query} allowFullScreen>
+          </iframe>
         </Col>
       </Row>
     </Container>
