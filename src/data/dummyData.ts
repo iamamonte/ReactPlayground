@@ -95,3 +95,8 @@ let amonte = new Intern(
   let Profiles = {amonte:amonteProfile, kyle:kyleProfile};
   export {Interns, Profiles};
 
+
+  // describe("Placeholder for dummy data", () => {
+  //   it("Is a placeholder", () =>{});
+
+  // } );

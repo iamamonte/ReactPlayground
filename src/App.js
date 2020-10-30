@@ -20,7 +20,9 @@ import SignUpForm from "./components/TestingForm";
 import NavBarComponent from "./components/NavBarComponent"
 import ResourcePage from "./components/ResourcePage";
 import HomePage from "./components/HomePage";
+import EventsPage from "./components/EventsPage";
 import EventDetails from "./components/EventDetails";
+
 
 /** React-redux Components */
 import { Provider } from 'react-redux';
@@ -48,6 +50,8 @@ const App = () => {
             <Route path="/TestingForm" component={SignUpForm}/>
             <Route path="/ReactFormikTest" component={BootstrapFormikExample} />
             <Route path="/ResourcePage" component={ResourcePage} />
+            <Route path="/EventsPage" component={EventsPage} />
+            <Route path="/HomePage" component={HomePage} />            
             <Route path="/EventDetails" component={EventDetails} />
             <Route component={PageNotFound} />
           </Switch>
