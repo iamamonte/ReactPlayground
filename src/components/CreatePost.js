@@ -12,8 +12,8 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
-
+import { FaVideo, FaCamera } from 'react-icons/fa'
+import { IoMdDocument } from 'react-icons/io'
 
 import '../styles/CreatePost.css'
 import PeopleComponent from './PeopleComponent'
@@ -65,14 +65,14 @@ const CreatePost = ({callback, profile}) => {
       </Form.Group>
       <Form.Group>
         <Row>
-          <Col><i>picture</i>
-            <i>video</i>
-            <i>document</i></Col>
+          <Col>
+          <Button variant="Light"><i><FaCamera size={30} style={{ fill: 'indigo' }}/></i></Button>
+          <Button variant="Light"><i><FaVideo size={30} style={{ fill: 'indigo' }}/></i></Button>
+          <Button variant="Light"><i><IoMdDocument size={30} style={{ fill: 'indigo' }}/></i></Button>
+          </Col>
           <Col xs={6}> <Button className="create-post-btn float-right col-3" onClick={()=> submitData() } >Ok</Button> </Col>
         </Row>
-
       </Form.Group>
-
       </Container>
   );
 };
