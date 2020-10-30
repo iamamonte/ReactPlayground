@@ -13,7 +13,7 @@ const EventDetails = () => {
   const event = events[0];
 
   // format map query
-  const map_api = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBxl-yiU6cLGeEfhldU3HKEQbx5ngWfEbM";
+  const map_api = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_MAPSAPIKEY}`;
   const formatted_location = formatLocation(event.location);
   const map_query = map_api + "&q=" + formatted_location;
 
