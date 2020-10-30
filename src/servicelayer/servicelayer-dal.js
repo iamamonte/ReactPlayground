@@ -6,6 +6,9 @@ import {firestoreDB as db} from '../util/config'
 import * as repository from '../data/dummydata.json';
 import {DateTime} from 'luxon'
 const RESULT_LIMIT = 10;
+// const ORDERBY_ASCENDING = "asc";
+const ORDERBY_DESCENDING = "desc";
+
 export async function getUserProfile(profileId) {
     await db.collection('profiles').doc(profileId).get().then(doc => {
         if (doc.exists) {
@@ -46,6 +49,42 @@ export async function fetchEvents(filter) {
       events.push(doc.data());
     });
     return {events:events, first:first, last:last};
+}
+
+export async function getFeed(userProfileId, after)
+{
+    const result = await _getFeed(userProfileId, after);
+    let items = [];
+    result.feed.forEach(doc=> {
+       items.push(doc.data().ref.get().then(item => {
+            return item.data()
+       })); 
+    });
+    return Promise.all(items).then(values => {return {feed:values, first:result.first,last:result.last};});
+    
+}
+
+
+
+export async function _getFeed(userProfileId, after)
+{
+    console.log("userProfile", userProfileId, "after", after);
+    let query = db.collection('profiles').doc(userProfileId)
+                .collection('feed')
+                .orderBy('timestamp', ORDERBY_DESCENDING)
+                .limit(RESULT_LIMIT * 2)
+    if(after)
+    {
+        query = query.startAfter(after);
+    }
+
+   return query.get().then(snapshot => {
+        var items = []
+        const docs = snapshot.docs;
+        let first = docs[0];
+        let last = docs[docs.length -1];
+        return {feed:docs,first:first,last:last}
+    });    
 }
 
 export async function getEventsExample() {

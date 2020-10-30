@@ -24,3 +24,26 @@ export interface EventLocation
     lat:number,
     lng:number
 }
+
+export interface Post {
+    id:string // uid
+    ,content:string
+    ,imgs:string[]
+    ,time:Date | null
+    ,stats:PostStats
+    
+}
+
+export interface PostStats 
+{
+    likes:number,
+    reposts:number,
+    comments:number,
+    favorites:number
+}
+
+export interface FeedResponse
+{
+    events:Event[],
+    posts:Post[]
+}
