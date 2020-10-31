@@ -51,41 +51,60 @@ export async function fetchEvents(filter) {
     return {events:events, first:first, last:last};
 }
 
-export async function getFeed(userProfileId, after)
-{
-    const result = await _getFeed(userProfileId, after);
-    let items = [];
-    result.feed.forEach(doc=> {
-       items.push(doc.data().ref.get().then(item => {
-            return item.data()
-       })); 
-    });
-    return Promise.all(items).then(values => {return {feed:values, first:result.first,last:result.last};});
-    
-}
 
-
-
-export async function _getFeed(userProfileId, after)
-{
-    console.log("userProfile", userProfileId, "after", after);
+export async function getFeed(userProfileId, after) {
     let query = db.collection('profiles').doc(userProfileId)
-                .collection('feed')
-                .orderBy('timestamp', ORDERBY_DESCENDING)
-                .limit(RESULT_LIMIT * 2)
-    if(after)
-    {
+        .collection('feed')
+        .orderBy('timestamp', ORDERBY_DESCENDING)
+        .limit(RESULT_LIMIT * 2)
+    if (after) {
         query = query.startAfter(after);
     }
+    return query.get().then(snapshot => {
+        const feedDocuments = snapshot.docs;
+        let feeds = []
+        let last = feedDocuments[feedDocuments.length - 1];
+        feedDocuments.forEach(doc => {
+            feeds.push(doc.data());
+        });
+        //each feed document is really just a reference to another document
+        let feedReferences = [];
+        feeds.forEach(feed => {
+            feedReferences.push(feed.ref.get().then(feedReference => {
+                return feedReference.data();  //add the feed's referenced document's data (as a promise)
+            }));
+        });
+        return Promise.all(feedReferences).then(referenceData => { //resolve all the feed reference promises (fetch document data)
+            //the reference should either be an "event" reference or "post" 
+            //feed "posts" can be passed directly.
+            let posts = [];
+            referenceData.forEach(post => {
+                if(!post.idEvent)
+                {
+                    posts.push(post);
+                }
+            });
+            //events have to be fetched from event column. The "event" in the feed collection is only of use to retrieve the event doc ID
+            let events = [];
+            referenceData.forEach(doc => {
+                if (doc.idEvent) {
+                    let docId = doc.idEvent;
+                    events.push(db.collection("events").doc(docId).get().then(event => {
+                        let _event = event.data();
+                        return _event; //adding event reference to collection. Will need to be resolved.
+                    }));
+                }
+            });
 
-   return query.get().then(snapshot => {
-        var items = []
-        const docs = snapshot.docs;
-        let first = docs[0];
-        let last = docs[docs.length -1];
-        return {feed:docs,first:first,last:last}
-    });    
+            return Promise.all(events).then(values=> { //resolving all event calls
+                return {events:values, posts:posts, last:last} //end of promise chain
+            });
+        });
+        
+        
+    });
 }
+
 
 export async function getEventsExample() {
     let events = []

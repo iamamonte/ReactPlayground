@@ -1,3 +1,7 @@
+/**
+ * @description Reducers should never mutate the state.
+ * @author - Amonte
+ */
 import * as ACTION from './servicelayer-actions'
 
 export const serviceLayerReducer = (state,action)=>
@@ -18,14 +22,13 @@ export const serviceLayerReducer = (state,action)=>
         case ACTION.RESPONSE_FEED:
             if(!action.isError)
             {
-                return { ...state, events:action.data.feed.events, posts:action.data.feed.posts, lastFeedRef:action.data.last}
+                return { ...state, events:action.data.events, posts:action.data.posts, last:action.data.last}
             }
             else
             {
                 let errorMessage =`Failed to fetch ${action.type}. Error:${action.data.error}`; 
                 throw new Error(errorMessage);
             }
-            break;
         default:
             return {...state};
     }

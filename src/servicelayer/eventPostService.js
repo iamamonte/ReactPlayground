@@ -1,5 +1,5 @@
 /**
- * @description  Services are responsible for normalizing data returned from the DAL and publishing the payload along with an identifying event aka type. 
+ * @description  Services are responsible for normalizing data returned from the DAL and publishing the payload along with an identifying action. 
  * @author - Amonte
  */
 import * as DAL from './servicelayer-dal'
@@ -13,14 +13,12 @@ export function* fetchFeed(dispatchObject)
     try{
         let payload = dispatchObject.payload;
         let feedResult = yield call(DAL.getFeed, payload.userProfileId, payload.after);
-        if(feedResult)
-        {
-            feedResult.feed = Normalize.feed(feedResult.feed);
-        }
-        else{ feedResult = {feed:[],first:null, after:null};}
+        let events = Normalize.events(feedResult.events);
+        let posts = Normalize.posts(feedResult.posts);
+        let lastRef = feedResult.last;
         yield put({
             type: ACTION.RESPONSE_FEED,
-            data: feedResult
+            data: {events:events, posts:posts, last:lastRef}
         });
 
     }

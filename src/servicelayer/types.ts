@@ -15,7 +15,7 @@ export interface Event {
     importDate:Date | null,
     modified:Date | null, //modified_date
     img:string, //orignalImageUrl
-    state:string
+    state:string,
     tags:string[]
 }
 

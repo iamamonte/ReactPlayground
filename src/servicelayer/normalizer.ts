@@ -40,6 +40,7 @@ function normalizeEvents(events:any[]) : Event[]
 {
     let retval:Event[] = []; 
     events.forEach(event => {
+        if(!event) return;
         let _event:Event = { 
             browserUrl: event.browser_url ?? "",
             category: event.category ?? "",
@@ -68,6 +69,7 @@ function normalizeEvents(events:any[]) : Event[]
 
 export const Normalize = {
     events:normalizeEvents
+    ,posts:normalizePosts
     ,feed:normalizeFeed
 }
 
