@@ -1,14 +1,36 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Welcome to the React Playground
 
-REMEMBER TO NPM INSTALL FIRST TO MAKE SURE YOUR DEPENDENCIES ARE UP TO DATE.
+Make sure you have the prerequisites installed for running a React app, i.e. node and npm.
 
-In order to use the NPM command in your terminal, make sure to download Node first https://nodejs.org/en/download/
+https://nodejs.org/en/download/
 
-In this project, take the time to look through the React-Bootstrap library's Components tab. Implement the following components with State and Event Listeners in mind.  There are examples provided to help give you some ideas on how to structure your components. Have fun!
 
-https://react-bootstrap.github.io/
+### TurnUp Coding Test
 
+The below is a series of tasks which will allow you to become exposed to the stack at TurnUP. It will also force you to gain some expertise with Git. Completing this test is a prerequisite for consideration for the software development internship at TurnUP. However, you can reach out with questions.
+
+##### Task 1 - Git - Forking the Repository and Creating Pull Request
+
+Check online resources for assistance with any of the below:
+
+- Fork the repository. 
+- The “head” branch will be development. Be sure to always fetch and pull down changes from development before beginning work.
+- When you start making code changes, be sure that you are a new branch that is appropriately named (reflects the task you're working on).
+
+The task is as follows:
+
+- Edit the interns.md file, adding your name, github handle, whethere you're working on mac or windows, time zone, start/stop date for your internship. Make sure this is done on a branch that is appropriately named, i.e. "task-one-*yourname*" or something similar.
+- Commit your changes, publish your branch and open a pull request against this upstream repository.
+- When your PR is merged in, you can move on to the next task.
+
+##### Task 2 - Run the application and make changes to the application
+
+Familiarize yourself with the application structure. Make sure you can run the application (see below instructions on running the app). 
+
+There is a React component in use in the application called InternInfoDisplay. Replicate using that component to display information about yourself on the site. Run the application and make sure your information displays properly.
+
+Commit your changes under an appropriately named branch, i.e. "task-two-*yourname*". Publish your branch and make a pull request against this upstream repository.
 
 
 ### Running Tests
@@ -28,41 +50,9 @@ Otherwise, it will keep running and any changes you make a file will cause the t
 
 ### Running the App
 
+REMEMBER TO NPM INSTALL FIRST TO MAKE SURE YOUR DEPENDENCIES ARE UP TO DATE.
+
 To start, run 'npm start' in your preferred terminal.
 
 Note: Any changes you make to the code while this action is running will cause the app to rebuild. This allows for modifying the code and being able to immediately see the changes in the browser. To kill this process, hit ctrl + C in the terminal.
 
-
-### Assignments
-
-#### React Focus
-##### Task 1
-
-This takes place on a new repository that is not open to commits from the public. So you’ll have to fork it.
-
-The “head” branch will be development. This means you always want to fetch changes from development before beginning work.
-
-Once you’ve fetched and merged into your development branch, start a new branch that is appropriately named to describe what changes you’re making.
-
-
-The assignment for everyone is as follows:
-
-Part 0 - Familiarize yourself with the application structure. I haven't a great resource for this yet but here are some options:
-
-https://www.pluralsight.com/guides/file-structure-react-applications-created-create-react-app
-https://dev.to/amirmoh10/understanding-the-react-build-workflow-and-the-folder-structure-3hlc
-
-Make sure you can run the app and the tests.
-
-
-Part 1 - Create React Bootstrap Component (https://react-bootstrap.github.io/)
-
-We’re going to practice creating react components using the react-bootstrap library. The components you create must make use of “props”. Create a functional component (as opposed to a class component).
-
-Part 2 - Create a unit test for your component (https://testing-library.com/docs/react-testing-library/intro / https://testing-library.com/docs/react-testing-library/cheatsheet)
-
-Note, there is a test that runs that checks that everything in the App.js component can render. But we want to test the specifics of your component. 
-
-Part 3 - Make use of the InternInfoDisplay component to display information about yourself on the site.
-
-These should all be nested under a branch. You can name it *yourname*-react-task1.
